@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>导航</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%233b82f6'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/static/app.css" />
+</head>
+<body>
+  <header>
+    <div class="wrap header-row">
+      <h1 id="page-title">导航</h1>
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="search" type="text" placeholder="搜索 (按 / 聚焦)" autocomplete="off" />
+      </div>
+      <div class="header-actions">
+        <button type="button" id="btn-feedback" title="提交反馈">反馈</button>
+        <button type="button" id="btn-feedback-admin" hidden title="反馈跟进">跟进</button>
+        <button type="button" id="btn-theme" title="切换主题"></button>
+        <button type="button" id="btn-admin">后台</button>
+      </div>
+    </div>
+    <div class="wrap editbar" id="editbar" hidden>
+      <button type="button" id="eb-settings">站点设置</button>
+      <button type="button" id="eb-new-group">新建分组</button>
+      <button type="button" id="eb-import">导入 JSON</button>
+      <button type="button" id="eb-export">导出 JSON</button>
+      <button type="button" id="eb-reset">重置</button>
+      <input type="file" id="import-file" accept="application/json" hidden />
+    </div>
+    <div class="wrap tabs" id="tabs"></div>
+    <div class="wrap pills" id="pills" hidden></div>
+  </header>
+
+  <main class="wrap" id="main"></main>
+
+  <div id="modal-root" hidden>
+    <div class="modal-mask" id="modal-mask">
+      <div class="modal" id="modal-box" role="dialog">
+        <div class="modal-head">
+          <h3 id="modal-title"></h3>
+          <button type="button" class="icon-btn" id="modal-close" aria-label="关闭">✕</button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/vendor/jquery.min.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

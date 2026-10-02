@@ -1,0 +1,574 @@
+{
+  "title": "导航",
+  "settings": {
+    "enablePing": true
+  },
+  "groups": [
+    {
+      "id": "local",
+      "name": "本地工具",
+      "color": "#6366f1",
+      "sites": [
+        {
+          "id": "local-nav",
+          "name": "导航站",
+          "url": "http://localhost:18080/",
+          "description": "本导航页自身，serve.sh 托管 dist/，默认 18080",
+          "openInNewTab": true
+        },
+        {
+          "id": "local-agent-session-manage",
+          "name": "会话管理",
+          "url": "http://localhost:8080/index.html",
+          "description": "CodeBuddy 历史会话索引，./start.sh 启动，默认 8080",
+          "openInNewTab": true
+        },
+        {
+          "id": "local-vpet",
+          "name": "VPet 桌宠",
+          "url": "http://localhost:8080/index.html",
+          "description": "虚拟桌宠 Web 原型，默认 8080；与会话管理冲突，建议改用 8081",
+          "openInNewTab": true
+        },
+        {
+          "id": "local-workbench",
+          "name": "手机工作台",
+          "url": "http://localhost:20083",
+          "description": "workbench：FastAPI + Vue3 采集手机资源并管理 termux-services，默认 20083",
+          "openInNewTab": true
+        },
+        {
+          "id": "local-device-manage",
+          "name": "设备管理",
+          "url": "http://localhost:20080/",
+          "description": "device_manage：SSH / WinRM 拉取设备版本与资源占用，默认 20080",
+          "openInNewTab": true
+        },
+        {
+          "id": "local-disk-web",
+          "name": "磁盘分析 Web",
+          "url": "http://127.0.0.1:20082",
+          "description": "disk-manage 只读 Web 界面 disk_web.py，默认 20082",
+          "openInNewTab": true
+        },
+        {
+          "id": "local-disk-manage-py",
+          "name": "磁盘分析 Python 版",
+          "url": "http://127.0.0.1:8000",
+          "description": "disk_manage.py 内置 Web，默认 8000；与手机工作台冲突，建议改端口",
+          "openInNewTab": true
+        },
+        {
+          "id": "local-douyin-webui",
+          "name": "抖音下载",
+          "url": "http://localhost:20084/",
+          "description": "douyin_download_by_trae webui.py 进度页，默认 20084；本机环境受限无法抓签名",
+          "openInNewTab": true
+        },
+        {
+          "id": "local-dsh-web",
+          "name": "DSH Web UI",
+          "url": "http://127.0.0.1:3080",
+          "description": "DeepSeek Harness 的 Web 界面 dsh web；dsh 已装 v0.1.1-rc.2-termux.1，但 web 未起，链接暂不可用",
+          "openInNewTab": true
+        }
+      ]
+    },
+    {
+      "id": "local-services",
+      "name": "本机服务",
+      "color": "#0ea5e9",
+      "sites": [
+        {
+          "id": "sv-termux-webui",
+          "name": "Termux 系统面板",
+          "url": "http://127.0.0.1:20088",
+          "description": "termux_webui：status/terminal/file/process/network/logs 六模块，FastAPI，默认 20088",
+          "openInNewTab": true
+        },
+        {
+          "id": "sv-file-server",
+          "name": "文件服务器",
+          "url": "http://127.0.0.1:28011",
+          "description": "script/http_server.py：多线程静态文件服务，python3 http_server.py start，默认 28011",
+          "openInNewTab": true
+        },
+        {
+          "id": "sv-wiki-webui",
+          "name": "Wiki 浏览器",
+          "url": "http://127.0.0.1:28012",
+          "description": "wiki-webui：只读浏览原子库/知识库，Fastify；需用户名密码 + TOTP 登录",
+          "openInNewTab": true
+        },
+        {
+          "id": "sv-status-web",
+          "name": "Termux 状态面板",
+          "url": "http://127.0.0.1:28900",
+          "description": "script/status-web.py：后台服务与端口资源看板，绑定 0.0.0.0，局域网可达",
+          "openInNewTab": true
+        },
+        {
+          "id": "sv-qq-maid-console",
+          "name": "机器人控制台",
+          "url": "http://127.0.0.1:28797/console/",
+          "description": "qq-maid-bot：axum 管理面，./botctl.sh start，端口取自 runtime-bot2/config/.env",
+          "openInNewTab": true
+        },
+        {
+          "id": "sv-version-monitor",
+          "name": "版本监控",
+          "url": "http://127.0.0.1:28899/",
+          "description": "qq-maid-version-monitor：零依赖 TS 服务，./run.sh start，默认 28899",
+          "openInNewTab": true
+        },
+        {
+          "id": "sv-ytdlp-webui",
+          "name": "yt-dlp Web UI",
+          "url": "http://127.0.0.1:3033",
+          "description": "software/yt-dlp/webui.py：下载任务进度页，python3 webui.py，默认 3033",
+          "openInNewTab": true
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "name": "搜索",
+      "color": "#3b82f6",
+      "sites": [
+        {
+          "id": "baidu",
+          "name": "百度",
+          "url": "https://www.baidu.com",
+          "description": "百度一下，你就知道",
+          "icon": "https://www.baidu.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "google",
+          "name": "Google",
+          "url": "https://www.google.com",
+          "description": "Google 搜索",
+          "icon": "https://www.google.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "bing",
+          "name": "Bing",
+          "url": "https://www.bing.com",
+          "description": "微软必应搜索",
+          "icon": "https://www.bing.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "duckduckgo",
+          "name": "DuckDuckGo",
+          "url": "https://duckduckgo.com",
+          "description": "隐私优先的搜索引擎",
+          "icon": "https://duckduckgo.com/favicon.ico",
+          "openInNewTab": true
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "name": "AI",
+      "color": "#8b5cf6",
+      "sites": [
+        {
+          "id": "chatgpt",
+          "name": "ChatGPT",
+          "url": "https://chatgpt.com",
+          "description": "OpenAI ChatGPT",
+          "icon": "https://chatgpt.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "claude",
+          "name": "Claude",
+          "url": "https://claude.ai",
+          "description": "Anthropic Claude",
+          "icon": "https://claude.ai/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "gemini",
+          "name": "Gemini",
+          "url": "https://gemini.google.com",
+          "description": "Google Gemini",
+          "icon": "https://gemini.google.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "kimi",
+          "name": "Kimi",
+          "url": "https://kimi.moonshot.cn",
+          "description": "月之暗面 Kimi AI",
+          "icon": "https://kimi.moonshot.cn/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "doubao",
+          "name": "豆包",
+          "url": "https://www.doubao.com",
+          "description": "字节跳动豆包 AI",
+          "icon": "https://www.doubao.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "deepseek",
+          "name": "DeepSeek",
+          "url": "https://chat.deepseek.com",
+          "description": "DeepSeek AI 助手",
+          "icon": "https://chat.deepseek.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "perplexity",
+          "name": "Perplexity",
+          "url": "https://www.perplexity.ai",
+          "description": "AI 搜索引擎",
+          "icon": "https://www.perplexity.ai/favicon.ico",
+          "openInNewTab": true
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "name": "开发",
+      "color": "#10b981",
+      "sites": [
+        {
+          "id": "github",
+          "name": "GitHub",
+          "url": "https://github.com",
+          "description": "代码托管平台",
+          "icon": "https://github.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "stackoverflow",
+          "name": "Stack Overflow",
+          "url": "https://stackoverflow.com",
+          "description": "开发者问答社区",
+          "icon": "https://stackoverflow.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "mdn",
+          "name": "MDN",
+          "url": "https://developer.mozilla.org",
+          "description": "Web 技术文档",
+          "icon": "https://developer.mozilla.org/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "npm",
+          "name": "npm",
+          "url": "https://www.npmjs.com",
+          "description": "Node.js 包管理",
+          "icon": "https://www.npmjs.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "vscode",
+          "name": "VS Code",
+          "url": "https://code.visualstudio.com",
+          "description": "微软 VS Code 编辑器",
+          "icon": "https://code.visualstudio.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "vercel",
+          "name": "Vercel",
+          "url": "https://vercel.com",
+          "description": "前端部署平台",
+          "icon": "https://vercel.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "cloudflare",
+          "name": "Cloudflare",
+          "url": "https://dash.cloudflare.com",
+          "description": "CDN 与云服务",
+          "icon": "https://dash.cloudflare.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "caniuse",
+          "name": "Can I Use",
+          "url": "https://caniuse.com",
+          "description": "浏览器兼容性查询",
+          "icon": "https://caniuse.com/img/favicon-128.png",
+          "openInNewTab": true
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": "社交",
+      "color": "#f59e0b",
+      "sites": [
+        {
+          "id": "weibo",
+          "name": "微博",
+          "url": "https://www.weibo.com",
+          "description": "新浪微博",
+          "icon": "https://www.weibo.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "zhihu",
+          "name": "知乎",
+          "url": "https://www.zhihu.com",
+          "description": "知乎 - 发现更大的世界",
+          "icon": "https://www.zhihu.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "bilibili",
+          "name": "哔哩哔哩",
+          "url": "https://www.bilibili.com",
+          "description": "B 站 - 你感兴趣的视频都在这",
+          "icon": "https://www.bilibili.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "douyin",
+          "name": "抖音",
+          "url": "https://www.douyin.com",
+          "description": "抖音 - 记录美好生活",
+          "icon": "https://www.douyin.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "xiaohongshu",
+          "name": "小红书",
+          "url": "https://www.xiaohongshu.com",
+          "description": "小红书 - 你的生活指南",
+          "icon": "https://www.xiaohongshu.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "twitter",
+          "name": "X (Twitter)",
+          "url": "https://x.com",
+          "description": "X 社交平台",
+          "icon": "https://x.com/favicon.ico",
+          "openInNewTab": true
+        }
+      ]
+    },
+    {
+      "id": "news",
+      "name": "资讯",
+      "color": "#ef4444",
+      "sites": [
+        {
+          "id": "36kr",
+          "name": "36氪",
+          "url": "https://36kr.com",
+          "description": "科技创业资讯",
+          "icon": "https://36kr.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "hackernews",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com",
+          "description": "YC 技术新闻社区",
+          "icon": "https://news.ycombinator.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "sspai",
+          "name": "少数派",
+          "url": "https://sspai.com",
+          "description": "数字生活方式",
+          "icon": "https://sspai.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "infoq",
+          "name": "InfoQ",
+          "url": "https://www.infoq.cn",
+          "description": "软件技术内容平台",
+          "icon": "https://www.infoq.cn/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "v2ex",
+          "name": "V2EX",
+          "url": "https://www.v2ex.com",
+          "description": "程序员社区",
+          "icon": "https://www.v2ex.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "juejin",
+          "name": "掘金",
+          "url": "https://juejin.cn",
+          "description": "开发者技术社区",
+          "icon": "https://juejin.cn/favicon.ico",
+          "openInNewTab": true
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "name": "工具",
+      "color": "#06b6d4",
+      "sites": [
+        {
+          "id": "excalidraw",
+          "name": "Excalidraw",
+          "url": "https://excalidraw.com",
+          "description": "在线手绘风格白板",
+          "icon": "https://excalidraw.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "figma",
+          "name": "Figma",
+          "url": "https://www.figma.com",
+          "description": "在线 UI 设计工具",
+          "icon": "https://www.figma.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "canva",
+          "name": "Canva",
+          "url": "https://www.canva.com",
+          "description": "在线图形设计工具",
+          "icon": "https://www.canva.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "notion",
+          "name": "Notion",
+          "url": "https://www.notion.so",
+          "description": "笔记与知识管理",
+          "icon": "https://www.notion.so/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "regex101",
+          "name": "Regex101",
+          "url": "https://regex101.com",
+          "description": "正则表达式调试工具",
+          "icon": "https://regex101.com/static/assets/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "jsonformat",
+          "name": "JSON Formatter",
+          "url": "https://jsonformatter.curiousconcept.com",
+          "description": "JSON 格式化工具",
+          "icon": "https://jsonformatter.curiousconcept.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "tinypng",
+          "name": "TinyPNG",
+          "url": "https://tinypng.com",
+          "description": "图片压缩工具",
+          "icon": "https://tinypng.com/images/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "carbon",
+          "name": "Carbon",
+          "url": "https://carbon.now.sh",
+          "description": "代码截图美化工具",
+          "icon": "https://carbon.now.sh/favicon.ico",
+          "openInNewTab": true
+        }
+      ]
+    },
+    {
+      "id": "learning",
+      "name": "学习",
+      "color": "#ec4899",
+      "sites": [
+        {
+          "id": "leetcode",
+          "name": "LeetCode",
+          "url": "https://leetcode.cn",
+          "description": "算法练习平台",
+          "icon": "https://leetcode.cn/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "coursera",
+          "name": "Coursera",
+          "url": "https://www.coursera.org",
+          "description": "在线课程平台",
+          "icon": "https://www.coursera.org/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "mooc",
+          "name": "中国大学MOOC",
+          "url": "https://www.icourse163.org",
+          "description": "国内在线公开课",
+          "icon": "https://www.icourse163.org/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "runoob",
+          "name": "菜鸟教程",
+          "url": "https://www.runoob.com",
+          "description": "编程入门教程",
+          "icon": "https://www.runoob.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "roadmap",
+          "name": "Roadmap.sh",
+          "url": "https://roadmap.sh",
+          "description": "开发者学习路线图",
+          "icon": "https://roadmap.sh/favicon.ico",
+          "openInNewTab": true
+        }
+      ]
+    },
+    {
+      "id": "shopping",
+      "name": "购物",
+      "color": "#f97316",
+      "sites": [
+        {
+          "id": "taobao",
+          "name": "淘宝",
+          "url": "https://www.taobao.com",
+          "description": "淘宝 - 淘你喜欢",
+          "icon": "https://www.taobao.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "jd",
+          "name": "京东",
+          "url": "https://www.jd.com",
+          "description": "京东 - 多快好省",
+          "icon": "https://www.jd.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "pinduoduo",
+          "name": "拼多多",
+          "url": "https://www.pinduoduo.com",
+          "description": "拼多多 - 拼得多省得多",
+          "icon": "https://www.pinduoduo.com/favicon.ico",
+          "openInNewTab": true
+        },
+        {
+          "id": "amazon",
+          "name": "Amazon",
+          "url": "https://www.amazon.cn",
+          "description": "亚马逊中国",
+          "icon": "https://www.amazon.cn/favicon.ico",
+          "openInNewTab": true
+        }
+      ]
+    }
+  ]
+}
