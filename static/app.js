@@ -640,8 +640,11 @@ function settingsModal() {
     withConfig((cfg) => {
       cfg.title = title;
       cfg.settings = {
-        ...(favicon ? { favicon } : {}),
-        ...(dft ? { defaultTab: dft } : {}),
+        // 对齐 React 版 SettingsModal：保留未知键（如 openInNewTab），
+        // 覆盖 favicon/defaultTab/enablePing；undefined 序列化时剔除该键
+        ...cfg.settings,
+        favicon: favicon || undefined,
+        defaultTab: dft || undefined,
         enablePing,
       };
     });
